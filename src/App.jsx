@@ -1,22 +1,15 @@
 import Menu from "./Menu"
-import Context from "./Context"
+import { DataProvider } from "./Context"
+import MainBody from "./MainBody"
+import './style.css'
 
 function App() {
-  const links = [
-    { href: "/home", icon: "home", title: "home" },
-    { href: "/services", icon: "services", title: "services" },
-    { href: "/pricing", icon: "pricing", title: "pricing" },
-    { href: "/blog", icon: "blog", title: "blog" },
-    { href: "/profile", icon: "profile", title: "profile" },
-  ]
   return (
-    <Context.Provider value={links}>
+    <DataProvider>
       <header>
         <Menu />
       </header>
-      <main>
-        <h1>Welcome to this website</h1>
-      </main>
+      <MainBody />
       <footer>
         <ul>
           <li>
@@ -30,7 +23,7 @@ function App() {
           </li>
         </ul>
       </footer>
-    </Context.Provider>
+    </DataProvider>
   )
 }
 
