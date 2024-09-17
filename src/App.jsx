@@ -1,4 +1,5 @@
 import Menu from "./Menu"
+import Context from "./Context"
 
 function App() {
   const links = [
@@ -9,9 +10,9 @@ function App() {
     { href: "/profile", icon: "profile", title: "profile" },
   ]
   return (
-    <>
+    <Context.Provider value={links}>
       <header>
-        <Menu links={links} />
+        <Menu />
       </header>
       <main>
         <h1>Welcome to this website</h1>
@@ -29,7 +30,7 @@ function App() {
           </li>
         </ul>
       </footer>
-    </>
+    </Context.Provider>
   )
 }
 
